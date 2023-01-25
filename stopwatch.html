@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>스탑워치 만들기</title>
+    <link rel = "stylesheet" href="calendar.css">
+    <link rel = "stylesheet" href="stopwatch.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+<div class = "container">
+    <h2>
+        목표: <span id = "goal">...</span>
+    </h2>
+    <button id = 'bt_goal'>목표</button>
+
+    <h3>운동시간</h3>
+    <h1>
+        <span id = "minutes">00</span>:<span id = "seconds">00</span>:<span id = 'tenMillis'>00</span>
+    </h1>
+    <h4>
+        #오운완: <span id = "workoutTime">0</span>
+    </h4>
+    <button id = "bt__start">start</button>
+    <button id = 'bt__stop'>stop</button>
+    <button id = 'bt__reset'>reset</button>
+   
+</div>
+<div class = "container">
+    <h5>
+        오늘의 한마디 - <span id ="todayComment">...</span>
+    </h5>
+    <button id = 'bt_comment'>입력</button>
+    <h5>
+        bmi/기초대사량 구하기
+    </h5>
+    <button id = 'bt_bmi'>입력</button>
+    <p id="your_bmi"></p>
+    <p id = "your_metabolism"></p>
+    <p id = "your_metabolism2"></p>
+
+    <button id = "share">
+        <a id="btnFacebook" class="link-icon facebook" href="javascript:shareFacebook();">페이스북 공유</a>
+    </button>
+</div>
+
+<div class = "rap">
+    <div class = "header">
+        <div class = "btn prevDay"></div>
+        <h2 class= "dateTitle"></h2>
+        <div class = "schedule">입력</div>
+        <div class = "btn nextDay"></div>
+    </div>
+
+    <div class = "grid dateHead">
+        <div>일</div>
+        <div>월</div>
+        <div>화</div>
+        <div>수</div>
+        <div>목</div>
+        <div>금</div>
+        <div>토</div>
+    </div>
+
+    <div class = "grid dateBoard"></div>
+</div>
+
+<div class = "kindofworkout">
+    <button id = "back">등</button>     
+    <button id = "chest">가슴</button>
+    <button id = "shoulder">어깨</button>
+    <button id = "leg">하체</button>
+    <ol id = "back_routine"></ol>
+    <ul id = "chest_routine"></ul>
+    <ul id = "shoulder_routine"></ul>
+    <ul id = "leg_routine"></ul>
+
+</div>
+<div class = "today_routine">
+    <h3>오늘의 루틴</h4>
+    <ul id = "routine_list"></ul>
+</div>
+
+<div>
+    <h3>인바디</h3>
+    <input type="text" id ='weight' placeholder="몸무게"/>
+    <button id = 'bt_weight' type="button" onclick="print_weight()">입력</button>
+    <input type="text" id ='muscle_mass' placeholder="근골격"/>
+    <button id = 'bt_muscle' type="button" onclick="print_muscle()">입력</button>
+    <input type="text" id ='fat' placeholder="체지방"/>
+    <button id = 'bt_fat' type="button" onclick="print_fat()">입력</button>
+
+    <p id = 'my_weight'></p>
+    <div id = 'my_muscle'>b</div>
+    <div id = 'my_fat'>c</div>
+
+</div>
+
+<div>
+    <canvas id = "myChart"></canvas>
+    <button id = "reData">데이터 수정</button>
+</div>
+
+<script src="./stopwatch.js"></script>
+<script src="./workout_diary.js"></script>
+<script src="./comment.js"></script>
+
+<script src="./calendar.js"></script>
+<script src="./workout_routine.js"></script>
+<script src="./inbody.js"></script>
+<script src="./inbody_chart.js"></script>
+
+</body>
+</html>
